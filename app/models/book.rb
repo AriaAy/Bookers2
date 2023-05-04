@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   
-  has_one_attached :image
+  # userモデルをアソシエージョン
+  belongs_to :user
   
 end
