@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
 
+  def create
+    user = User.new(user_params)
+    user.save
+    flash[:notice] =　"Welcome! You have signed up successfully."
+    redirect_to user_path(user.id)
+  end
+
   def index
     @users = User.all
     @books = Book.all

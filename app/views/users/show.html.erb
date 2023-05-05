@@ -1,27 +1,18 @@
-<!--  「users/id」ページ  -->
+<!--  ユーザー詳細ページ  -->
 
-<!-- ユーザーの詳細 -->
+<!--  フラッシュメッセージ  -->
 <div>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <h3><%= @user.name %></h3>
-  <% if @user == current_user %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-  <% end %>
+  <%= flash[:notice] %>
 </div>
 
-<!-- ユーザ一覧画面 -->
-
 <h1>User info</h1>
-  
-  <%= image_tag @user.get_profile_image(100,100) %>
-  
-  <p>name</p>
-  <span><%= @user.name %></span>
-  
-  <P>introduction</P>
-  <span><%= @user.introduction %></span>
-  
-  <!--  edit画面へ移動する  -->
-  <% if @user == current_user %>
-    <p><%= link_to edit_user_path(@user) %></p>
-  <% end %>
+<%= image_tag @user.get_profile_image(100,100) %>
+
+<p>name</p>
+<span><%= @user.name %></span>
+
+<P>introduction</P>
+<span><%= @user.introduction %></span>
+
+<!--  edit画面へ移動する  -->
+<%=link_to "Edit", edit_user_path(@user.id) %>

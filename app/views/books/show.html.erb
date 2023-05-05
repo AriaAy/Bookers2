@@ -1,14 +1,8 @@
 <!--  投稿詳細ページを表示  -->
 
-<!--  フラッシュメッセージ  -->
-<div class="flash">
-  <%= flash[:notice] %>
-  <%= flash[:success] %>
-</div>
+<p><span>Title:</span><%= @book.title %></p>
 
-<p><strong>Title:</strong><%= @book.title %></p>
-
-<p><strong>Body:</strong><%= @book.body %></p>
+<p><span>Body:</span><%= @book.body %></p>
 
 <!--  編集ボタン  -->
 <%= link_to 'Edit', edit_book_path(@book) %>
