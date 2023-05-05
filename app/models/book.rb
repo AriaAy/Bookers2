@@ -3,4 +3,6 @@ class Book < ApplicationRecord
   # userモデルをアソシエージョン
   belongs_to :user
   
+  validates :title, presence: true
+  validates :body, presence: true, length: { minimum: 200 }
 end
