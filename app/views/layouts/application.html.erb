@@ -12,6 +12,12 @@
 
   <body>
     <header>
+      
+      <%= link_to root_path do %>
+        <h1>Bookes</h1>
+      <% end %>
+      <!--  左のロゴ  -->
+      
       <% if user_signed_in? %>
       <!--  ログイン状態の表示  -->
         <li>
@@ -51,7 +57,8 @@
     </header>
     
     <main>
-    <%= yield %>
+      <p><%= flash[:notice] %></p>
+      <%= yield %>
     </main>
 
 

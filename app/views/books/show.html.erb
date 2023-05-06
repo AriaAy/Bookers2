@@ -1,11 +1,18 @@
 <!--  投稿詳細ページを表示  -->
-
-<p><span>Title:</span><%= @book.title %></p>
-
-<p><span>Body:</span><%= @book.body %></p>
-
-<!--  編集ボタン  -->
-<%= link_to 'Edit', edit_book_path(@book) %>
-<span>|</span>
-<!--  戻るボタン  -->
-<%= link_to 'Back', books_path %>
+<body>
+  <h1>Book detail</h1>
+  <table>
+    <% @book.each do |book| %>
+      <tr>
+        <td>
+          <%= image_tag user.get_profile_image(100,100) %>
+          <%= link_to user.name user_path %>
+        </td>
+        <td><%= link_to book.title %></td>
+        <td><%= link_to book.body %></td>
+        <td><%= link_to 'Edit', edit_book_path(@book) %></td>
+        <td><%= link_to 'Destroy', book_path(book), method: :delete, "data-confirm" => "Are you sure?" %></td>
+      </tr>
+    <% end %>
+  </table>
+</body>

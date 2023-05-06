@@ -1,25 +1,26 @@
 <!--  投稿一覧画面  -->
+
 <body>
   <h1>Books</h1>
+
   <table>
-    
     <tr>
+      <th></th>
       <th>Title</th>
       <th>Body</th>
       <th></th>
     </tr>
     
     <% @books.each do |book| %>
-    <!--< @profile_image.each do |profile_image| %>-->
       <tr>
-        <td><%= image_tag book.user.get_profile_image(100,100) %></td>
-        <td><%= book.title %></td>
+        <td><%= image_tag user.get_profile_image(100,100) %></td>
+        <td><%= link_to book.title %></td>
         <td><%= book.body %></td>
         <td><%= link_to "Edit", edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book_path(book), method: :delete, "data-confirm" => "Are you sure?" %></td>
       </tr>
     <% end %>
-    
   </table>
+  
 </body>
 

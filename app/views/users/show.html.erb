@@ -1,10 +1,4 @@
 <!--  ユーザー詳細ページ  -->
-
-<!--  フラッシュメッセージ  -->
-<div>
-  <%= flash[:notice] %>
-</div>
-
 <h1>User info</h1>
 <%= image_tag @user.get_profile_image(100,100) %>
 
@@ -14,5 +8,6 @@
 <P>introduction</P>
 <span><%= @user.introduction %></span>
 
-<!--  edit画面へ移動する  -->
 <%=link_to "Edit", edit_user_path(@user.id) %>
+
+
